@@ -16,26 +16,56 @@ export default function BackgroundMusic() {
     audio.volume = 0.2;
     audio.loop = true;
 
-    // Auto-play on mount
+    let hasStarted = false;
+
+    // Try auto-play on mount
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise
         .then(() => {
           setIsPlaying(true);
+          hasStarted = true;
         })
-        .catch(err => {
-          // Auto-play blocked by browser, user needs to interact first
-          console.log("Auto-play blocked:", err);
+        .catch(() => {
+          // Auto-play blocked by browser, will try on first user interaction
           setIsPlaying(false);
         });
     }
+
+    // Auto-play on first user interaction (click, scroll, or keypress)
+    const startOnInteraction = () => {
+      if (!hasStarted && audio.paused) {
+        audio.play()
+          .then(() => {
+            setIsPlaying(true);
+            hasStarted = true;
+            // Remove listeners after first successful play
+            document.removeEventListener('click', startOnInteraction);
+            document.removeEventListener('scroll', startOnInteraction);
+            document.removeEventListener('keydown', startOnInteraction);
+          })
+          .catch(err => {
+            console.log("Play failed:", err);
+          });
+      }
+    };
+
+    // Add event listeners for auto-play on interaction
+    document.addEventListener('click', startOnInteraction);
+    document.addEventListener('scroll', startOnInteraction);
+    document.addEventListener('keydown', startOnInteraction);
 
     // Auto-hide control after 5 seconds
     const timer = setTimeout(() => {
       setShowControl(false);
     }, 5000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('click', startOnInteraction);
+      document.removeEventListener('scroll', startOnInteraction);
+      document.removeEventListener('keydown', startOnInteraction);
+    };
   }, []);
 
   const togglePlay = () => {

@@ -1,8 +1,12 @@
 import Container from "../components/Container";
 import { Mail, Phone, MapPin, Github, Facebook, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { personalInfo } from "../data/portfolio";
 
 export default function Contact() {
+  const { t } = useTranslation();
+  
   const contactInfo = [
     {
       icon: Mail,
@@ -13,7 +17,7 @@ export default function Contact() {
     },
     {
       icon: Phone,
-      label: "Số điện thoại",
+      label: t('contact.phone'),
       value: "0377 913 722",
       link: "tel:0377913722",
       color: "green"
@@ -28,13 +32,13 @@ export default function Contact() {
     {
       icon: Facebook,
       label: "Facebook",
-      value: "Hữu Nhân",
+      value: personalInfo.name,
       link: "https://www.facebook.com/huu.nhan.1829405",
       color: "blue"
     },
     {
       icon: MapPin,
-      label: "Địa chỉ",
+      label: t('contact.location'),
       value: "25 Hàn Thuyên, Phường Thủ Đức, TP.Thủ Đức, TP.HCM",
       link: "https://maps.google.com/?q=25+Hàn+Thuyên,+Phường+Thủ+Đức,+TP.Thủ+Đức,+TP.HCM",
       color: "red"
@@ -73,10 +77,10 @@ export default function Contact() {
             </motion.div>
             
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
-              Liên hệ với tôi
+              {t('contact.title')}
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-              Tôi luôn sẵn sàng kết nối và hợp tác. Đừng ngần ngại liên hệ qua các kênh bên dưới!
+              {t('contact.subtitle')}
             </p>
           </motion.div>
         </Container>
@@ -138,17 +142,17 @@ export default function Contact() {
           >
             <div className="bg-gradient-to-br from-primary-500 to-purple-600 rounded-3xl p-8 md:p-12 shadow-2xl shadow-primary-500/20">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Sẵn sàng làm việc cùng nhau?
+                {t('contact.title')}
               </h2>
               <p className="text-primary-100 mb-8">
-                Tôi luôn tìm kiếm các dự án thú vị và cơ hội hợp tác mới. Hãy liên hệ để bắt đầu cuộc trò chuyện!
+                {t('contact.subtitle')}
               </p>
               <a
                 href="mailto:caohuunhanhoabinh2003@gmail.com"
                 className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-3 rounded-xl font-semibold hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
               >
                 <Mail className="w-5 h-5" />
-                Gửi email ngay
+                {t('contact.send')}
               </a>
             </div>
           </motion.div>

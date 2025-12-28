@@ -4,8 +4,10 @@ import Container from "../components/Container";
 import BlogCard from "../components/BlogCard";
 import { blogPosts, categories } from "../data/posts";
 import { Search, Filter, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Blog() {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -28,8 +30,8 @@ export default function Blog() {
   return (
     <>
       <Header 
-        title="Blog Lập Trình"
-        subtitle="Chia sẻ kiến thức về Java & JavaScript"
+        title={t('blog.title')}
+        subtitle={t('blog.subtitle')}
         image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
       
@@ -39,7 +41,7 @@ export default function Blog() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
             <div className="flex items-center space-x-2">
               <Filter className="h-5 w-5 text-gray-500" />
-              <span className="text-lg font-medium text-gray-900">Lọc theo:</span>
+              <span className="text-lg font-medium text-gray-900">{t('blog.categories')}:</span>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
@@ -47,7 +49,7 @@ export default function Blog() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Tìm kiếm bài viết..."
+                  placeholder={t('blog.search')}
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   value={searchQuery}
                   onChange={handleSearchChange}
@@ -60,7 +62,7 @@ export default function Blog() {
                   value={selectedCategory}
                   onChange={handleCategoryChange}
                 >
-                  <option value="all">Tất cả chủ đề</option>
+                  <option value="all">{t('certificates.all')}</option>
                   {categories.map((category) => (
                     <option key={category.id} value={category.name}>
                       {category.name} ({category.count})
@@ -82,7 +84,7 @@ export default function Blog() {
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              Tất cả ({blogPosts.length})
+              {t('certificates.all')} ({blogPosts.length})
             </button>
             {categories.map((category) => (
               <button
@@ -110,7 +112,7 @@ export default function Blog() {
             </div>
             
             <div className="text-center text-gray-600">
-              Hiển thị {filteredPosts.length} bài viết
+              Hiển thị {filteredPosts.length} {t('blog.allPosts')}
             </div>
           </>
         ) : (
@@ -118,9 +120,9 @@ export default function Blog() {
             <div className="text-gray-400 mb-4">
               <Search className="h-16 w-16 mx-auto" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Không tìm thấy bài viết</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('blog.noResults')}</h3>
             <p className="text-gray-600">
-              Hãy thử tìm kiếm với từ khóa khác hoặc chọn chủ đề khác
+              {t('blog.search')}
             </p>
           </div>
         )}

@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "certificates": "Certificates",
+    "about": "About",
+    "contact": "Contact",
+    "readBlog": "Read Blog"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Java Backend Developer",
+    "description": "Specializing in network programming, Java and JavaScript. Passionate about building high-performance web applications and sharing knowledge through blogging.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "available": "Available for work",
+    "myProjects": "My Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Introduction",
+    "description": "I am a developer passionate about technology and always seeking opportunities to learn and grow.",
+    "role": "DEVELOPER INTERN",
+    "introTitle": "SELF-INTRODUCTION",
+    "detailedBio": [
+      "My name is Cao Huu Nhan, currently a final-year Software Engineering student at Ho Chi Minh City University of Technology (HUTECH). I am on the journey of completing my final university years and preparing to enter my career path as a Developer Intern, focusing on Backend Web Development and modern technologies related to Web2 and Web3.",
+      "My passion for technology and programming formed early, especially an interest in how backend systems operate: from data processing and API building to ensuring application security and performance. This motivated me to pursue Information Technology, where I have had the opportunity to learn and practice foundational knowledge in JavaScript, C#, TypeScript, as well as frameworks and technologies like Node.js, Express.js, ASP.NET Core, NestJS, React.js, and Next.js.",
+      "Throughout my studies, I always try to balance academic results with self-study and practice through personal projects. I believe that knowledge is only truly valuable when applied in practice. Therefore, I have proactively built many projects, notably an e-commerce website with RESTful API architecture, JWT authentication, user authorization, VNPay integration, and an AI chatbot for customer support. Besides, I also participated in developing a dApp for game account traceability on the blockchain, where I had the opportunity to dive deeper into Smart Contracts, Solidity, EVM-compatible blockchains, IPFS, and decentralized wallet integration.",
+      "In work and study, I always prioritize result quality over words. I have good teamwork skills, clear logical thinking, and a high sense of responsibility. In many projects, I am often trusted by members with the role of coordinating or leading the team, thanks to my ability to analyze problems, provide solutions, and support teammates to achieve common goals. I am particularly interested in the process of working together as a team to find the right and optimal direction for each technical problem.",
+      "Besides time spent on programming, I also appreciate personal quiet moments to think, learn, and refresh myself. I believe that continuous learning, even when facing difficult problems, is the best way to grow in the ever-changing field of technology.",
+      "At the present time, I desire to work in a young, dynamic, and supportive environment where I can continue to learn, hone my professional skills, and gradually affirm my value on the path to becoming a Backend / Fullstack Developer in the future. I am always ready to embrace new challenges because, for me: no matter how hard it is, I get it done."
+    ],
+    "honorsTitle": "HONORS & ACHIEVEMENTS",
+    "honors": {
+      "sv5t": {
+        "title": "5-Good Student",
+        "description": "An honorary title for excellent, well-rounded students in 5 aspects: Good Ethics, Good Study, Good Physicality, Good Volunteering, and Good Integration."
+      },
+      "svtb": {
+        "title": "Outstanding Student",
+        "description": "A prestigious title for students with excellent academic achievements, active participation in activities, and who are shining examples for the student community."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies I use",
+    "languages": "Languages",
+    "frameworks": "Frameworks & Libraries",
+    "database": "Database",
+    "web3Tools": "Web3 & Tools"
+  },
+  "projects": {
+    "title": "Personal Projects",
+    "subtitle": "Projects I've built",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "technologies": "Technologies",
+    "personalProjects": "Personal Projects",
+    "projectsSubtitle": "Real-world products I've built, applying the latest technologies."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Knowledge sharing",
+    "latest": "Latest Posts",
+    "readMore": "Read more",
+    "allPosts": "All Posts",
+    "categories": "Categories",
+    "search": "Search posts...",
+    "noResults": "No posts found",
+    "minute": "min read",
+    "featuredPosts": "Featured Posts",
+    "featuredSubtitle": "The most favorite articles about in-depth knowledge and practical experience."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's connect",
+    "name": "Full name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "An error occurred. Please try again.",
+    "info": "Contact information",
+    "location": "Location",
+    "phone": "Phone",
+    "ctaTitle": "Have a question?",
+    "ctaSubtitle": "Don't hesitate to contact me. I'm always ready to discuss technology, programming, and interesting projects.",
+    "sendEmail": "Send me an Email"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "Achievements and credentials",
+    "filter": "Filter by",
+    "all": "All",
+    "sort": "Sort by",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "viewCertificate": "View Certificate"
+  },
+  "footer": {
+    "description": "Sharing knowledge about network programming, Java and JavaScript. Where I document my learning journey and career development.",
+    "explore": "Explore",
+    "categories": "Categories",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "github": "GitHub",
+    "email": "Email",
+    "phone": "Phone",
+    "viewAll": "View all",
+    "gpa": "GPA"
+  },
+  "portfolio": {
+    "educationTitle": "Education & Activities",
+    "education": {
+      "school": "HCMC University of Technology (HUTECH)",
+      "major": "Software Engineering",
+      "degree": "IT Engineer"
+    },
+    "activities": {
+      "olympic": {
+        "title": "Olympic Informatics Club",
+        "item1": "Training algorithms and solving Olympic competition problems.",
+        "item2": "Participating in academic competitions at the departmental level."
+      },
+      "hackathonTitle": "Hackathon Achievements"
+    },
+    "careerGoalsTitle": "Career Goals",
+    "careerGoals": [
+      {
+        "title": "Backend Developer",
+        "description": "In-depth Backend development (RESTful API, security, performance). Basic Web3 research."
+      },
+      {
+        "title": "Fullstack Web & Web3 Developer",
+        "description": "Proficient in MERN Stack and Web3 dApps. Integrating Blockchain into real-world applications."
+      },
+      {
+        "title": "Tech Lead / Project Manager",
+        "description": "Team management, orienting technology solutions for Web2/Web3 and digital transformation."
+      }
+    ],
+    "hackathons": [
+      {
+        "achievement": "🥉 Third Place",
+        "role": "Full Stack Developer"
+      },
+      {
+        "achievement": "Participated",
+        "role": "Full Stack Developer"
+      }
+    ],
+    "projectAwards": {
+      "ecom": "Full-featured e-commerce system with VNPay payment integration and AI Chatbot.",
+      "pione": "🥉 Third Place - Pione Dream Hackathon 2025"
+    },
+    "projectDetails": {
+      "ecom": {
+        "title": "E-Commerce Website",
+        "description": "Full-featured e-commerce system with VNPay payment and AI support Chatbot.",
+        "role": "Fullstack Developer"
+      },
+      "pione": {
+        "title": "Pione Game Trace (dApp)",
+        "description": "Blockchain-based game account traceability platform, ensuring transparency and preventing fraud.",
+        "role": "Blockchain Developer"
+      }
+    }
+  }
+}

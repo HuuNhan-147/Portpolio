@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Mail, Code2, Database, Server, ExternalLink, Phone, GraduationCap, Target, Terminal, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import BlogCard from "../components/BlogCard";
 import Container from "../components/Container";
 import { blogPosts } from "../data/posts";
 import { personalInfo, skills, projects, education, careerGoals, hackathons } from "../data/portfolio";
 
 export default function Home() {
+  const { t } = useTranslation();
   const featuredPosts = blogPosts.filter(post => post.featured);
   // recentPosts removed as it was unused and identical to slice logic if needed directly
 
@@ -47,7 +49,7 @@ export default function Home() {
                 alt={personalInfo.name} 
                 className="relative w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-[8px] border-white dark:border-dark-800 shadow-2xl transition-transform duration-500 hover:scale-105"
               />
-              <div className="absolute bottom-4 right-6 bg-green-500 w-8 h-8 rounded-full border-[6px] border-white dark:border-dark-800" title="Available for work"></div>
+              <div className="absolute bottom-4 right-6 bg-green-500 w-8 h-8 rounded-full border-[6px] border-white dark:border-dark-800" title={t('hero.available')}></div>
             </motion.div>
 
             <motion.div
@@ -71,11 +73,11 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link to="/about" className="btn-primary flex items-center justify-center group">
-                  Về tôi
+                  {t('nav.about')}
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <a href="#projects" className="btn-secondary">
-                  Dự án của tôi
+                  {t('hero.myProjects')}
                 </a>
               </div>
             </motion.div>
@@ -88,9 +90,9 @@ export default function Home() {
               className="mt-12 flex justify-center flex-wrap gap-4"
             >
               {[
-                { icon: Github, href: personalInfo.github, label: "GitHub" },
-                { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
-                { icon: Phone, href: `tel:${personalInfo.phone}`, label: "Phone" },
+                { icon: Github, href: personalInfo.github, label: t('common.github') },
+                { icon: Mail, href: `mailto:${personalInfo.email}`, label: t('common.email') },
+                { icon: Phone, href: `tel:${personalInfo.phone}`, label: t('common.phone') },
               ].map((item, index) => (
                 <a 
                   key={index}
@@ -110,7 +112,7 @@ export default function Home() {
       <section className="py-20 bg-dark-50 dark:bg-dark-900/30">
         <Container>
           <div className="text-center mb-12">
-             <h2 className="text-2xl font-bold text-dark-900 dark:text-white mb-2">Công nghệ & Kỹ năng</h2>
+             <h2 className="text-2xl font-bold text-dark-900 dark:text-white mb-2">{t('skills.title')}</h2>
              <div className="w-16 h-1 bg-primary-600 mx-auto rounded-full"></div>
           </div>
           
@@ -118,7 +120,7 @@ export default function Home() {
              <div className="p-6 bg-white dark:bg-dark-800 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-dark-100 dark:border-dark-700">
                 <div className="flex items-center mb-4 text-blue-600 dark:text-blue-400">
                   <Terminal className="h-6 w-6 mr-2" />
-                  <h3 className="font-bold">Languages</h3>
+                  <h3 className="font-bold">{t('skills.languages')}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {skills.languages.map(s => (
@@ -130,7 +132,7 @@ export default function Home() {
              <div className="p-6 bg-white dark:bg-dark-800 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-dark-100 dark:border-dark-700">
                 <div className="flex items-center mb-4 text-green-600 dark:text-green-400">
                   <Server className="h-6 w-6 mr-2" />
-                  <h3 className="font-bold">Frameworks</h3>
+                  <h3 className="font-bold">{t('skills.frameworks')}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {skills.frameworks.map(s => (
@@ -142,7 +144,7 @@ export default function Home() {
              <div className="p-6 bg-white dark:bg-dark-800 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-dark-100 dark:border-dark-700">
                 <div className="flex items-center mb-4 text-orange-600 dark:text-orange-400">
                   <Database className="h-6 w-6 mr-2" />
-                  <h3 className="font-bold">Database</h3>
+                  <h3 className="font-bold">{t('skills.database')}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {skills.database.map(s => (
@@ -154,7 +156,7 @@ export default function Home() {
              <div className="p-6 bg-white dark:bg-dark-800 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-dark-100 dark:border-dark-700">
                 <div className="flex items-center mb-4 text-purple-600 dark:text-purple-400">
                   <Cpu className="h-6 w-6 mr-2" />
-                  <h3 className="font-bold">Web3 & Tools</h3>
+                  <h3 className="font-bold">{t('skills.web3Tools')}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[...skills.web3, ...skills.tools].map(s => (
@@ -174,28 +176,28 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-bold text-dark-900 dark:text-white mb-8 flex items-center">
                   <GraduationCap className="mr-3 h-8 w-8 text-primary-600" />
-                  Học vấn & Hoạt động
+                  {t('portfolio.educationTitle')}
                 </h2>
                 
                 <div className="bg-white dark:bg-dark-900 p-6 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm mb-8">
-                  <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-2">{education.school}</h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{education.major}</p>
-                  <p className="text-dark-500 dark:text-dark-400 text-sm mb-2">{education.degree} • {education.duration}</p>
+                  <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-2">{t('portfolio.education.school')}</h3>
+                  <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{t('portfolio.education.major')}</p>
+                  <p className="text-dark-500 dark:text-dark-400 text-sm mb-2">{t('portfolio.education.degree')} • {education.duration}</p>
                   <div className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300 rounded-full text-sm font-semibold">
-                    GPA: {education.gpa}
+                    {t('common.gpa')}: {education.gpa}
                   </div>
                 </div>
 
                 <div className="bg-white dark:bg-dark-900 p-6 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm mb-6">
-                   <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-4">Câu lạc bộ Olympic Tin Học</h3>
+                   <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-4">{t('portfolio.activities.olympic.title')}</h3>
                    <ul className="space-y-3 text-dark-600 dark:text-dark-300">
                      <li className="flex items-start">
                        <span className="mr-2 mt-1.5 h-1.5 w-1.5 bg-primary-600 rounded-full shrink-0"></span>
-                       Rèn luyện thuật toán và giải đề thi Olympic.
+                       {t('portfolio.activities.olympic.item1')}
                      </li>
                      <li className="flex items-start">
                        <span className="mr-2 mt-1.5 h-1.5 w-1.5 bg-primary-600 rounded-full shrink-0"></span>
-                       Tham gia cuộc thi học thuật cấp khoa.
+                       {t('portfolio.activities.olympic.item2')}
                      </li>
                    </ul>
                 </div>
@@ -203,16 +205,16 @@ export default function Home() {
                 <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/10 dark:to-orange-900/10 p-6 rounded-2xl border border-amber-200 dark:border-amber-800 shadow-sm">
                    <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-4 flex items-center">
                      <span className="text-2xl mr-2">🏆</span>
-                     Thành tích Hackathon
+                     {t('portfolio.activities.hackathonTitle')}
                    </h3>
                    <ul className="space-y-4">
                      {hackathons.map((hackathon, index) => (
                        <li key={index} className="bg-white dark:bg-dark-900/50 p-4 rounded-xl border border-amber-100 dark:border-amber-800/50">
                          <div className="flex justify-between items-start mb-2">
                            <h4 className="font-bold text-dark-900 dark:text-white">{hackathon.name}</h4>
-                           <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded-full">{hackathon.achievement}</span>
+                           <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded-full">{t(`portfolio.hackathons.${index}.achievement`)}</span>
                          </div>
-                         <p className="text-sm text-dark-600 dark:text-dark-300">{hackathon.role}</p>
+                         <p className="text-sm text-dark-600 dark:text-dark-300">{t(`portfolio.hackathons.${index}.role`)}</p>
                        </li>
                      ))}
                    </ul>
@@ -223,7 +225,7 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-bold text-dark-900 dark:text-white mb-8 flex items-center">
                   <Target className="mr-3 h-8 w-8 text-primary-600" />
-                  Mục tiêu nghề nghiệp
+                  {t('portfolio.careerGoalsTitle')}
                 </h2>
                 
                 <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-dark-200 dark:before:via-dark-700 before:to-transparent">
@@ -235,8 +237,8 @@ export default function Home() {
                       
                       <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 bg-white dark:bg-dark-900 rounded-2xl border border-dark-100 dark:border-dark-800 shadow-sm transition-all hover:shadow-md">
                          <div className="text-sm font-bold text-primary-600 dark:text-primary-400 mb-1">{goal.period}</div>
-                         <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-2">{goal.title}</h3>
-                         <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed">{goal.description}</p>
+                         <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-2">{t(`portfolio.careerGoals.${index}.title`)}</h3>
+                         <p className="text-dark-600 dark:text-dark-300 text-sm leading-relaxed">{t(`portfolio.careerGoals.${index}.description`)}</p>
                       </div>
                     </div>
                   ))}
@@ -250,9 +252,9 @@ export default function Home() {
       <section id="projects" className="py-20 bg-dark-50 dark:bg-dark-900/30">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-4">Dự án cá nhân</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-4">{t('projects.personalProjects')}</h2>
             <p className="text-dark-500 dark:text-dark-400 max-w-2xl mx-auto">
-              Những sản phẩm thực tế tôi đã xây dựng, áp dụng các công nghệ mới nhất.
+              {t('projects.projectsSubtitle')}
             </p>
           </div>
 
@@ -264,17 +266,17 @@ export default function Home() {
                    <div className="absolute inset-0 bg-dark-900/20 group-hover:bg-transparent transition-colors"></div>
                    {project.award && (
                      <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-                       {project.award}
+                       {project.id === 1 ? t('portfolio.projectAwards.ecom') : project.id === 2 ? t('portfolio.projectAwards.pione') : project.award}
                      </div>
                    )}
                    <div className="absolute top-4 right-4 bg-white dark:bg-dark-800 px-3 py-1 rounded-full text-xs font-bold text-primary-600 dark:text-primary-400 shadow">
-                     {project.role}
+                     {project.id === 1 ? t('portfolio.projectDetails.ecom.role') : project.id === 2 ? t('portfolio.projectDetails.pione.role') : project.role}
                    </div>
                 </div>
                 <div className="p-8">
                   <div className="text-sm text-dark-400 dark:text-dark-500 mb-2">{project.duration}</div>
-                  <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">{project.title}</h3>
-                  <p className="text-dark-600 dark:text-dark-300 mb-6 line-clamp-3">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3 group-hover:text-primary-600 transition-colors">{project.id === 1 ? t('portfolio.projectDetails.ecom.title') : project.id === 2 ? t('portfolio.projectDetails.pione.title') : project.title}</h3>
+                  <p className="text-dark-600 dark:text-dark-300 mb-6 line-clamp-3">{project.id === 1 ? t('portfolio.projectDetails.ecom.description') : project.id === 2 ? t('portfolio.projectDetails.pione.description') : project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map(t => (
@@ -323,13 +325,13 @@ export default function Home() {
         <Container>
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-4">Bài viết nổi bật</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark-900 dark:text-white mb-4">{t('blog.featuredPosts')}</h2>
               <p className="text-dark-500 dark:text-dark-400 max-w-xl">
-                Những bài viết tâm đắc nhất về kiến thức chuyên sâu và kinh nghiệm thực tế.
+                {t('blog.featuredSubtitle')}
               </p>
             </div>
             <Link to="/blog" className="hidden md:flex text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300 items-center">
-              Xem tất cả <ArrowRight className="ml-2 h-4 w-4" />
+              {t('common.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
           
@@ -357,7 +359,7 @@ export default function Home() {
           
           <div className="mt-8 text-center md:hidden">
             <Link to="/blog" className="btn-secondary w-full justify-center">
-              Xem tất cả bài viết
+              {t('blog.allPosts')}
             </Link>
           </div>
         </Container>
@@ -370,15 +372,14 @@ export default function Home() {
              <div className="absolute top-0 right-0 -z-10 w-[400px] h-[400px] bg-primary-600 rounded-full blur-[100px] opacity-30 translate-x-1/3 -translate-y-1/3" />
              <div className="absolute bottom-0 left-0 -z-10 w-[300px] h-[300px] bg-purple-600 rounded-full blur-[100px] opacity-30 -translate-x-1/3 translate-y-1/3" />
              
-             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Bạn có câu hỏi?</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{t('contact.ctaTitle')}</h2>
              <p className="text-dark-300 text-lg mb-10 max-w-2xl mx-auto">
-               Đừng ngần ngại liên hệ với tôi. Tôi luôn sẵn sàng trao đổi về công nghệ, 
-               lập trình và các dự án thú vị.
+               {t('contact.ctaSubtitle')}
              </p>
              
              <a href="mailto:contact@huunhan.dev" className="btn-primary inline-flex items-center text-lg">
                <Mail className="mr-2 h-5 w-5" />
-               Gửi Email cho tôi
+               {t('contact.sendEmail')}
              </a>
           </div>
         </Container>

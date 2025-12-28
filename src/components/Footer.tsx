@@ -1,7 +1,9 @@
 import { Github, Linkedin, Mail, Code2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,8 +18,7 @@ export default function Footer() {
               <span className="font-display font-bold text-2xl text-white">HuuNhan<span className="text-primary-400">.dev</span></span>
             </div>
             <p className="text-dark-300 mb-8 max-w-sm leading-relaxed">
-              Chia sẻ kiến thức về lập trình mạng, Java và JavaScript. 
-              Nơi tôi ghi lại hành trình học tập và phát triển sự nghiệp.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               {[
@@ -38,13 +39,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-lg mb-6 text-white">Khám phá</h3>
+            <h3 className="font-display font-bold text-lg mb-6 text-white">{t('footer.explore')}</h3>
             <ul className="space-y-4">
               {[
-                { name: "Trang chủ", href: "/" },
-                { name: "Blog", href: "/blog" },
-                { name: "Về tôi", href: "/#about" },
-                { name: "Liên hệ", href: "/#contact" }
+                { name: t('nav.home'), href: "/" },
+                { name: t('nav.blog'), href: "/blog" },
+                { name: t('nav.about'), href: "/#about" },
+                { name: t('nav.contact'), href: "/#contact" }
               ].map((item) => (
                 <li key={item.name}>
                   <Link to={item.href} className="text-dark-300 hover:text-white transition-colors">
@@ -56,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-lg mb-6 text-white">Chuyên mục</h3>
+            <h3 className="font-display font-bold text-lg mb-6 text-white">{t('footer.categories')}</h3>
             <ul className="space-y-4">
               {[
                 { name: "Java Networking", href: "/blog?category=Java%20Networking" },
@@ -74,10 +75,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-dark-800 pt-8 flex flex-col md:flex-row justify-between items-center text-dark-400 text-sm">
-          <p>© {currentYear} HuuNhan.dev. All rights reserved.</p>
+          <p>© {currentYear} HuuNhan.dev. {t('footer.rights')}.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+            <span className="hover:text-white cursor-pointer transition-colors">{t('footer.privacy')}</span>
+            <span className="hover:text-white cursor-pointer transition-colors">{t('footer.terms')}</span>
           </div>
         </div>
       </div>

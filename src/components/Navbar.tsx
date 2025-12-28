@@ -4,8 +4,11 @@ import { Menu, X, Code2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { clsx } from "clsx";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -19,11 +22,11 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Trang chủ", path: "/" },
-    { name: "Blog", path: "/blog" },
-    { name: "Chứng chỉ", path: "/certificates" },
-    { name: "Về tôi", path: "/about" },
-    { name: "Liên hệ", path: "/contact" }
+    { name: t('nav.home'), path: "/" },
+    { name: t('nav.blog'), path: "/blog" },
+    { name: t('nav.certificates'), path: "/certificates" },
+    { name: t('nav.about'), path: "/about" },
+    { name: t('nav.contact'), path: "/contact" }
   ];
 
   return (
@@ -62,13 +65,15 @@ export default function Navbar() {
               to="/blog"
               className="px-5 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-xl hover:bg-primary-700 transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-600/40 hover:-translate-y-0.5"
             >
-              Đọc Blog
+              {t('nav.readBlog')}
             </Link>
+            <LanguageSwitcher />
             <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
+            <LanguageSwitcher />
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -106,7 +111,7 @@ export default function Navbar() {
                   className="block w-full px-5 py-3 text-center bg-primary-600 text-white rounded-xl font-medium"
                   onClick={() => setIsOpen(false)}
                 >
-                  Đọc Blog
+                  {t('nav.readBlog')}
                 </Link>
               </div>
             </div>

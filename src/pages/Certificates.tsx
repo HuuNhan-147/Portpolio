@@ -2,8 +2,10 @@ import Container from "../components/Container";
 import { certificates } from "../data/certificates";
 import { Calendar, Award, ExternalLink, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Certificates() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-dark-950 pt-20 transition-colors">
       
@@ -13,10 +15,10 @@ export default function Certificates() {
         <Container className="relative z-10">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Chứng chỉ & <span className="text-primary-400">Thành tựu</span>
+              {t('certificates.title')} & <span className="text-primary-400">{t('certificates.subtitle')}</span>
             </h1>
             <p className="text-xl text-slate-300">
-              Các chứng chỉ chuyên môn và kỹ năng tôi đã đạt được trong quá trình học tập và phát triển.
+              {t('certificates.subtitle')}
             </p>
           </div>
         </Container>
@@ -84,7 +86,7 @@ export default function Certificates() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-full px-4 py-2 bg-white dark:bg-dark-800 border border-slate-200 dark:border-dark-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-dark-700 hover:text-primary-600 dark:hover:text-primary-400 transition-colors group"
                   >
-                    Xem chứng chỉ
+                    {t('certificates.viewCertificate')}
                     <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

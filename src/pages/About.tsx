@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { personalInfo } from "../data/portfolio";
 import Container from "../components/Container";
 import { Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import sv5tImage from "../assets/sv5t.jpg";
 import svtbImage from "../assets/svtb.jpg";
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <div className="pt-32 pb-20 min-h-screen bg-white dark:bg-dark-950">
       <Container>
@@ -30,7 +32,7 @@ export default function About() {
                     {personalInfo.name}
                   </h2>
                   <div className="inline-block px-4 py-1.5 bg-primary-600 text-white font-bold rounded-lg shadow-lg">
-                    DEVELOPER INTERN
+                    {t('about.role')}
                   </div>
                 </div>
               </div>
@@ -49,11 +51,11 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h1 className="text-4xl md:text-5xl font-display font-bold text-dark-900 dark:text-white mb-8 border-b-4 border-primary-600 inline-block pb-2">
-                GIỚI THIỆU BẢN THÂN
+                {t('about.introTitle')}
               </h1>
               
               <div className="space-y-6 text-lg text-dark-600 dark:text-dark-300 leading-relaxed font-light">
-                {personalInfo.detailedBio.split('\n\n').map((paragraph, index) => (
+                {(t('about.detailedBio', { returnObjects: true }) as string[]).map((paragraph: string, index: number) => (
                   <p key={index} className="first-letter:text-5xl first-letter:font-bold first-letter:text-primary-600 first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px]">
                     {paragraph.trim()}
                   </p>
@@ -70,7 +72,7 @@ export default function About() {
             >
               <h2 className="text-3xl font-display font-bold text-dark-900 dark:text-white mb-8 flex items-center">
                 <Award className="mr-3 h-8 w-8 text-amber-600" />
-                DANH HIỆU & THÀNH TÍCH
+                {t('about.honorsTitle')}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -90,11 +92,11 @@ export default function About() {
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-3xl">🏅</span>
                       <h3 className="text-xl font-bold text-amber-900 dark:text-amber-300">
-                        Sinh viên 5 tốt
+                        {t('about.honors.sv5t.title')}
                       </h3>
                     </div>
                     <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
-                      Danh hiệu vinh dự dành cho sinh viên xuất sắc, toàn diện cả 5 mặt: Đạo đức tốt, Học tập tốt, Thể lực tốt, Tình nguyện tốt, Hội nhập tốt.
+                      {t('about.honors.sv5t.description')}
                     </p>
                   </div>
                 </motion.div>
@@ -115,11 +117,11 @@ export default function About() {
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-3xl">⭐</span>
                       <h3 className="text-xl font-bold text-blue-900 dark:text-blue-300">
-                        Sinh viên tiêu biểu
+                        {t('about.honors.svtb.title')}
                       </h3>
                     </div>
                     <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
-                      Danh hiệu cao quý dành cho sinh viên có thành tích học tập xuất sắc, tích cực tham gia hoạt động và là tấm gương sáng cho cộng đồng sinh viên.
+                      {t('about.honors.svtb.description')}
                     </p>
                   </div>
                 </motion.div>

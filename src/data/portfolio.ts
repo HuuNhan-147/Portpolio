@@ -39,7 +39,7 @@ export const projects = [
     id: 1,
     title: "Website Bán Hàng Điện Tử",
     duration: "3/2025 - 5/2025",
-    description: "Hệ thống thương mại điện tử đầy đủ tính năng với thanh toán VNPay và Chatbot AI.",
+    description: "Hệ thống thương mại điện tử đầy đủ tính năng với thanh toán VNPay và AI Agent hỗ trợ người dùng.",
     role: "Fullstack Developer",
     tech: ["Node.js", "Express", "MongoDB", "React.js", "TailwindCSS", "VNPay", "Gemini AI"],
     links: {

@@ -6,6 +6,7 @@ import BlogCard from "../components/BlogCard";
 import Container from "../components/Container";
 import { blogPosts } from "../data/posts";
 import { personalInfo, skills, projects, education, careerGoals, hackathons } from "../data/portfolio";
+import cvFile from "../assets/-Cao-Huu-Nhan-TopCV.vn-291225.93331.pdf";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -78,6 +79,14 @@ export default function Home() {
                 </Link>
                 <a href="#projects" className="btn-secondary">
                   {t('hero.myProjects')}
+                </a>
+                <a 
+                  href={cvFile} 
+                  download="Cao-Huu-Nhan-CV.pdf"
+                  className="btn-secondary flex items-center justify-center group"
+                >
+                  {t('hero.downloadCV')}
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1 rotate-90" />
                 </a>
               </div>
             </motion.div>

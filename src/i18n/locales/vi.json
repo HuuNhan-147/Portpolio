@@ -14,7 +14,8 @@
     "viewProjects": "Xem Dự Án",
     "contactMe": "Liên Hệ",
     "available": "Sẵn sàng làm việc",
-    "myProjects": "Dự án của tôi"
+    "myProjects": "Dự án của tôi",
+    "downloadCV": "Tải CV"
   },
   "about": {
     "title": "Về Tôi",
@@ -162,13 +163,13 @@
       }
     ],
     "projectAwards": {
-      "ecom": "Hệ thống thương mại điện tử đầy đủ tính năng với thanh toán VNPay và Chatbot AI.",
+      "ecom": "Hệ thống thương mại điện tử đầy đủ tính năng với thanh toán VNPay và AI Agent hỗ trợ người dùng.",
       "pione": "🥉 Giải Ba - Pione Dream Hackathon 2025"
     },
     "projectDetails": {
       "ecom": {
         "title": "Website Bán Hàng Điện Tử",
-        "description": "Hệ thống thương mại điện tử đầy đủ tính năng với thanh toán VNPay và Chatbot AI.",
+        "description": "Hệ thống thương mại điện tử đầy đủ tính năng với thanh toán VNPay và AI Agent hỗ trợ người dùng.",
         "role": "Fullstack Developer"
       },
       "pione": {

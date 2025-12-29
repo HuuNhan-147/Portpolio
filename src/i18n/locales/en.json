@@ -14,7 +14,8 @@
     "viewProjects": "View Projects",
     "contactMe": "Contact Me",
     "available": "Available for work",
-    "myProjects": "My Projects"
+    "myProjects": "My Projects",
+    "downloadCV": "Download CV"
   },
   "about": {
     "title": "About Me",
@@ -162,13 +163,13 @@
       }
     ],
     "projectAwards": {
-      "ecom": "Full-featured e-commerce system with VNPay payment integration and AI Chatbot.",
+      "ecom": "Full-featured e-commerce system with VNPay payment integration and AI Agent for user support.",
       "pione": "🥉 Third Place - Pione Dream Hackathon 2025"
     },
     "projectDetails": {
       "ecom": {
         "title": "E-Commerce Website",
-        "description": "Full-featured e-commerce system with VNPay payment and AI support Chatbot.",
+        "description": "Full-featured e-commerce system with VNPay payment and AI Agent for user support.",
         "role": "Fullstack Developer"
       },
       "pione": {
